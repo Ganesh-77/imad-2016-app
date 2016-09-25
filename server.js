@@ -13,6 +13,10 @@ app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'Login.html'));
 });
 
+app.get('/Signup.html', function (req, res) {
+  res.sendFile(path.join(__dirname, 'ui', 'Signup.html'));
+});
+
 app.get('/Newfile', function (req, res) {
   res.send("NEW FILE IS READY TO USE");
 });
