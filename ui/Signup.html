@@ -1,0 +1,126 @@
+<html>
+<head>
+<title> Sign Page</title>
+<style>
+h3
+{
+font-family:Courier
+}
+
+#locate
+{
+padding-left:50px;
+padding-top:100px;
+padding-right:50px;
+}
+#mar
+{
+border:1px solid;
+margin-top:100px;
+margin-left:400px;
+margin-bottom:100px;
+margin-right:400px;
+//background-color
+}
+
+#but
+{
+font-size:14px;
+text-align:center;
+//border:ridge;
+padding:10px 20px;
+//margin:4px 2px;
+background-color:#188fff;
+}
+</style>
+
+<script>
+function Passwordcheck()
+{
+text = document.getElementById("pwd").value;
+text1 = document.getElementById("confirmpwd").value;
+
+		if((text == 0 ) || ( text1 == 0 ))
+		{
+			alert("Password shouldn't be empty");
+			return false;
+		}		
+
+		res=/[A-Z]/;
+	if(!res.test(text))
+		{
+			alert("It should have atleast one upper case character");
+			return false;
+		}
+
+		res=/[0-9]/;
+	if(!res.test(text))
+		{
+			alert("It should have atleast one number character");
+			return false;
+		}
+
+		res=/[!@#$%^&*_-]/;
+	if(!res.test(text))
+		{
+			alert("It should have atleast one special character");
+			return false;
+		}
+	if(text != text1)
+		{
+			alert("Password mismatch");
+			return false;
+		}
+	else
+		{
+			alert("Login Successful");
+			return true;
+		}
+}
+</script>
+</head>
+
+<body id="mar">
+<form id="locate" align="center" onsubmit="Passwordcheck()">
+
+<div>
+<input type="text" id="username" autocomplete="off" required="true" placeholder="User Name" autofocus>
+</div>
+</br>
+<div >
+<input type="password" id="pwd" autocomplete="off" required="true" placeholder="Password">
+</div>
+</br>
+<div >
+<input type="password" id="confirmpwd" autocomplete="off" required="true" placeholder="Confirm Password">
+</div>
+</br>
+<div>
+<input type="number" id="num" autocomplete="off" required="true" placeholder="Age">
+</div>
+<br>
+<div>
+<input type="number" id="mobileno" autocomplete="off" required="true" placeholder="Mobile Number" size="10">
+</div>
+<br>
+<div>
+<input type="email" id="email" autocomplete="on" required="true" placeholder="Email ID">
+</div>
+<br>
+<br>
+<div>
+<img src="C:/Users/shiva/Desktop/Hope/Additional images/Boy.png" height="40px" width="40px">
+<input type="radio"> I'm a Boy
+&nbsp;&nbsp;
+<img src="C:/Users/shiva/Desktop/Hope/Additional images/girl.png" height="40px" width="40px">
+<input type="radio" >I'm a girl
+</div>
+<br>
+Add your interests :
+<textarea cols="25" rows="3"></textarea>
+<br>
+<br>
+<input type="Submit">
+</form>
+</body>
+</html>
